@@ -1,0 +1,21 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React
+build/
+dist/
+
+# Archivos de configuración
+.env
+config.js
+
+# Logs y archivos temporales
+*.log
+*.tmp
+
+# Archivos IDE
+.vscode/
+.idea/
+.DS_Store
