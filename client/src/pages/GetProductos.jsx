@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
+  const [productoBuscado, setBuscado] = useState("");
+
+  const handleChange = (event) => {
+    setBuscado(event.target.value);
+    console.log(productoBuscado);
+  };
 
   const getProductos = () => {
     axios.get("http://localhost:3001/get/productos").then((response) => {
@@ -16,6 +22,13 @@ function Productos() {
   useEffect(() => {
     getProductos();
   }, []);
+
+  // Función para filtrar los productos por el nombre buscado
+  const filtrarProductos = () => {
+    return productosLista.filter((producto) =>
+      producto.nombre.toLowerCase().includes(productoBuscado.toLowerCase())
+    );
+  };
 
   return (
     <div className="container">
@@ -38,6 +51,23 @@ function Productos() {
       <div className="card text-center mt-5">
         <div className="card-header">LISTA DE PRODUCTOS</div>
         <div className="card-body">
+          <div className="input-group mb-3">
+            <div className="input-group-prepend">
+              <span className="input-group-text" id="basic-addon1">
+                Buscar:
+              </span>
+            </div>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Ingrese el nombre del producto"
+              aria-label="Nombre"
+              aria-describedby="basic-addon1"
+              onChange={handleChange}
+              name="nombre"
+              //value={formData.nombre}
+            />
+          </div>
           <table className="table table-striped">
             <thead>
               <tr>
@@ -51,9 +81,9 @@ function Productos() {
               </tr>
             </thead>
             <tbody>
-              {productosLista.map((elem, key) => {
+              {filtrarProductos().map((elem, key) => {
                 return (
-                  <tr>
+                  <tr key={key}>
                     <td>{elem.id}</td>
                     <td>{elem.nombre} </td>
                     <td>{elem.precio_costo}</td>
