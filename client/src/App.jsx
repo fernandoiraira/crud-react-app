@@ -10,7 +10,13 @@ function App() {
           <div className="col-2 px-0">
             <Sidebar />
           </div>
-          <div className="col-10 px-0"></div>
+          <div className="col-10 px-0">
+            <div className="container text-center">
+              <Routes>
+                <Route path="/" />
+              </Routes>
+            </div>
+          </div>
         </div>
       </div>
     </Router>
