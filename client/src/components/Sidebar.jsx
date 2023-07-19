@@ -28,7 +28,7 @@ const Sidebar = () => {
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
             <Link exact to="/productos" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="columns">Productos</CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="box">Productos</CDBSidebarMenuItem>
             </Link>
             <Link exact to="/ventas" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Ventas</CDBSidebarMenuItem>
@@ -37,9 +37,7 @@ const Sidebar = () => {
               <CDBSidebarMenuItem icon="user">Clientes</CDBSidebarMenuItem>
             </Link>
             <Link exact to="/proveedores" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">
-                Proveedores
-              </CDBSidebarMenuItem>
+              <CDBSidebarMenuItem icon="truck">Proveedores</CDBSidebarMenuItem>
             </Link>
           </CDBSidebarMenu>
         </CDBSidebarContent>
