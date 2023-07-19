@@ -52,7 +52,7 @@ function Productos() {
         </Dropdown>
       </div>
       <div className="card text-center mt-5">
-        <div className="card-header">GESTIÓN DE PRODUCTOS</div>
+        <div className="card-header">CARGA DE PRODUCTOS</div>
         <div className="card-body">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
