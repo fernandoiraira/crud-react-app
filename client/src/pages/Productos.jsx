@@ -17,7 +17,19 @@ function Productos() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const add = () => {};
+  const add = () => {
+    axios
+      .post("http://localhost:3001/create/producto", {
+        nombre: formData.nombre,
+        precioCosto: formData.precioCosto,
+        precioVenta: formData.precioVenta,
+        stock: formData.stock,
+        descripcion: formData.descripcion,
+      })
+      .then(() => {
+        alert("Producto registrado!");
+      });
+  };
 
   return (
     <div className="container">
