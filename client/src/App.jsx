@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import ErrorPage from "./pages/ErrorPage";
 import MainPage from "./pages/MainPage";
 import Ventas from "./pages/Ventas";
+import Productos from "./pages/Productos";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/ventas" element={<Ventas />} />
+                <Route path="/productos" element={<Productos />} />
                 <Route path="*" element={<ErrorPage />} />
               </Routes>
             </div>
