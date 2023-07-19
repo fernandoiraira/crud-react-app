@@ -5,7 +5,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 function Sidebar() {
   return (
-    <div className="d-flex">
+    <div className="container">
       <div className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
         <a
           href="/"
