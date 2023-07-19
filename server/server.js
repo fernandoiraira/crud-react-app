@@ -30,6 +30,24 @@ app.get("/get/empleados", (req, res) => {
   });
 });
 
+app.post("/create/producto", (req, res) => {
+  const nombre = req.body.nombre;
+  const precioCosto = req.body.precioCosto;
+  const precioVenta = req.body.preciVoenta;
+  const stock = req.body.stock;
+  const descripcion = req.body.descripcion;
+  const fecha = new Date();
+
+  db.query(
+    "INSERT INTO productos (nombre,precio_costo,precio_venta,stock,descripcion,fecha_compra) VALUES (?,?,?,?,?,?)",
+    [nombre, precioCosto, precioVenta, stock, descripcion, fecha],
+    (err, result) => {
+      if (err) throw err;
+      res.send("Producto creado con exito");
+    }
+  );
+});
+
 app.listen(port, (req, res) => {
   console.log("Servidor corriendo en el puerto " + port);
 });
