@@ -1,15 +1,17 @@
 # Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
+client/node_modules/
+client/npm-debug.log
+client/yarn-error.log
 
 # React
-build/
-dist/
+client/build/
+client/dist/
 
 # Archivos de configuración
 .env
 config.js
+client/.env
+client/config.js
 
 # Logs y archivos temporales
 *.log
@@ -19,3 +21,6 @@ config.js
 .vscode/
 .idea/
 .DS_Store
+client/.vscode/
+client/.idea/
+
