@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import ErrorPage from "./pages/ErrorPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <div className="col-10 px-0">
             <div className="container text-center">
               <Routes>
-                <Route path="/" />
+                <Route path="/" element={<MainPage />} />
                 <Route path="*" element={<ErrorPage />} />
               </Routes>
             </div>
