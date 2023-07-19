@@ -25,3 +25,6 @@ client/config.js
 client/.vscode/
 client/.idea/
 
+# Archivo de datos de login
+server\user_data.js
+
