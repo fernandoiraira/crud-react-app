@@ -39,7 +39,7 @@ function Sidebar() {
               <Link to="/clientes" className="nav-link px-2 text-white">
                 <i className="bi-person">
                   <span className="ms-3 d-none d-sm-inline text-white">
-                    Clientes
+                    Clientessss
                   </span>
                 </i>
               </Link>
