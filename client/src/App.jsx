@@ -22,6 +22,7 @@ function App() {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/ventas" element={<Ventas />} />
                 <Route path="/productos" element={<Productos />} />
+                <Route path="/get/productos" element={<Productos />} />
                 <Route path="/clientes" element={<Clientes />} />
                 <Route path="/proveedores" element={<Proveedores />} />
                 <Route path="*" element={<ErrorPage />} />
