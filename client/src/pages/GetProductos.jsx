@@ -5,33 +5,17 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 
 function Productos() {
-  const [formData, setFormData] = useState({
-    id: null,
-    nombre: "",
-    precioCosto: null,
-    precioVenta: null,
-    stock: null,
-    descripcion: "",
-    fechaCompra: null,
-  });
+  const [productosLista, setProductos] = useState([]);
 
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+  const getProductos = () => {
+    axios.get("http://localhost:3001/get/productos").then((response) => {
+      setProductos(response.data);
+    });
   };
 
-  const add = () => {
-    axios
-      .post("http://localhost:3001/create/producto", {
-        nombre: formData.nombre,
-        precioCosto: formData.precioCosto,
-        precioVenta: formData.precioVenta,
-        stock: formData.stock,
-        descripcion: formData.descripcion,
-      })
-      .then(() => {
-        alert("Producto registrado!");
-      });
-  };
+  useEffect(() => {
+    getProductos();
+  }, []);
 
   return (
     <div className="container">
@@ -52,15 +36,38 @@ function Productos() {
         </Dropdown>
       </div>
       <div className="card text-center mt-5">
-        <div className="card-header">VER PRODUCTOS</div>
+        <div className="card-header">LISTA DE PRODUCTOS</div>
         <div className="card-body">
-          
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio Costo</th>
+                <th scope="col">Precio Venta</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Descr.</th>
+                <th scope="col">Fecha Compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              {productosLista.map((elem, key) => {
+                return (
+                  <tr>
+                    <th>{elem.id}</th>
+                    <th>{elem.nombre} </th>
+                    <th>{elem.precio_costo}</th>
+                    <th>{elem.precio_venta} </th>
+                    <th>{elem.stock} </th>
+                    <th>{elem.descripcion} </th>
+                    <th>{elem.fecha_compra} </th>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
-        <div className="card-footer text-muted">
-          <button onClick={add} className="btn btn-success mx-2">
-            Registrar
-          </button>
-        </div>
+        <div className="card-footer text-muted"></div>
       </div>
     </div>
   );
