@@ -54,13 +54,13 @@ function Productos() {
               {productosLista.map((elem, key) => {
                 return (
                   <tr>
-                    <th>{elem.id}</th>
-                    <th>{elem.nombre} </th>
-                    <th>{elem.precio_costo}</th>
-                    <th>{elem.precio_venta} </th>
-                    <th>{elem.stock} </th>
-                    <th>{elem.descripcion} </th>
-                    <th>{elem.fecha_compra} </th>
+                    <td>{elem.id}</td>
+                    <td>{elem.nombre} </td>
+                    <td>{elem.precio_costo}</td>
+                    <td>{elem.precio_venta} </td>
+                    <td>{elem.stock} </td>
+                    <td>{elem.descripcion} </td>
+                    <td>{elem.fecha_compra} </td>
                   </tr>
                 );
               })}
