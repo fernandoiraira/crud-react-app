@@ -17,6 +17,8 @@ function Productos() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+  const add = () => {};
+
   return (
     <div className="container">
       <div className="card text-center mt-5">
@@ -111,6 +113,11 @@ function Productos() {
               value={formData.descripcion}
             />
           </div>
+        </div>
+        <div className="card-footer text-muted">
+          <button onClick={add} className="btn btn-success mx-2">
+            Registrar
+          </button>
         </div>
       </div>
     </div>
