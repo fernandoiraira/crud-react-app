@@ -22,6 +22,16 @@ function Sidebar() {
                 </i>
               </Link>
             </i>
+
+            <i>
+              <Link to="/ventas" className="nav-link px-2 text-white">
+                <i className="bi-coin">
+                  <span className="ms-3 d-none d-sm-inline text-white">
+                    Ventas
+                  </span>
+                </i>
+              </Link>
+            </i>
           </ul>
         </div>
       </div>
