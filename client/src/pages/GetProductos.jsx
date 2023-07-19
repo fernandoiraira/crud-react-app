@@ -22,7 +22,7 @@ function Productos() {
       <div className="container">
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
-            Acciones
+            Menú
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
