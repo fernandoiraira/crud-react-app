@@ -1,5 +1,6 @@
 # Node.js
 client/node_modules/
+server/node_modules/
 client/npm-debug.log
 client/yarn-error.log
 
