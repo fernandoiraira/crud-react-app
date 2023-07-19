@@ -23,6 +23,13 @@ app.post("/create/empleado", (req, res) => {
   );
 });
 
+app.get("/get/empleados", (req, res) => {
+  db.query("SELECT * FROM empleados", (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
+
 app.listen(port, (req, res) => {
   console.log("Servidor corriendo en el puerto " + port);
 });
