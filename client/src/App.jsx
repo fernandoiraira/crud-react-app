@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import ErrorPage from "./pages/ErrorPage";
 import MainPage from "./pages/MainPage";
+import Ventas from "./pages/Ventas";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <div className="container text-center">
               <Routes>
                 <Route path="/" element={<MainPage />} />
+                <Route path="/ventas" element={<Ventas />} />
                 <Route path="*" element={<ErrorPage />} />
               </Routes>
             </div>
