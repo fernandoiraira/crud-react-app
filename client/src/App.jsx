@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <div className="container text-center">
               <Routes>
                 <Route path="/" />
+                <Route path="*" element={<ErrorPage />} />
               </Routes>
             </div>
           </div>
