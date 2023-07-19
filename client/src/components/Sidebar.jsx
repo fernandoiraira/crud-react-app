@@ -34,6 +34,26 @@ function Sidebar() {
                 </i>
               </Link>
             </i>
+
+            <i>
+              <Link to="/clientes" className="nav-link px-2 text-white">
+                <i className="bi-person">
+                  <span className="ms-3 d-none d-sm-inline text-white">
+                    Clientes
+                  </span>
+                </i>
+              </Link>
+            </i>
+
+            <i>
+              <Link to="/proveedores" className="nav-link px-2 text-white">
+                <i className="bi-truck">
+                  <span className="ms-3 d-none d-sm-inline text-white">
+                    Proveedores
+                  </span>
+                </i>
+              </Link>
+            </i>
           </ul>
         </div>
       </div>
