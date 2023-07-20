@@ -39,7 +39,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="nombre"
                   onChange={handleChange}
-                  value={editado.nombre}
+                  defaultValue={editado.nombre}
                 />
               </div>
 
@@ -56,7 +56,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="PrecioCosto"
                   aria-describedby="basic-addon1"
                   name="precioCosto"
-                  value={editado.precio_costo}
+                  defaultValue={editado.precio_costo}
                 />
               </div>
 
@@ -73,7 +73,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="PrecioVenta"
                   aria-describedby="basic-addon1"
                   name="precioVenta"
-                  value={editado.precio_venta}
+                  defaultValue={editado.precio_venta}
                 />
               </div>
 
@@ -90,7 +90,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="Stock"
                   aria-describedby="basic-addon1"
                   name="stock"
-                  value={editado.stock}
+                  defaultValue={editado.stock}
                 />
               </div>
 
@@ -107,7 +107,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="Descripcion"
                   aria-describedby="basic-addon1"
                   name="descripcion"
-                  value={editado.descripcion}
+                  defaultValue={editado.descripcion}
                 />
               </div>
             </div>
