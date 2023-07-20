@@ -56,6 +56,25 @@ app.get("/get/productos", (req, res) => {
   });
 });
 
+app.post("/update/producto", (req, res) => {
+  const id = req.body.id;
+  const nombre = req.body.nombre;
+  const precioCosto = req.body.precioCosto;
+  const precioVenta = req.body.precioVenta;
+  const stock = req.body.stock;
+  const descripcion = req.body.descripcion;
+  const fecha = new Date();
+
+  db.query(
+    "UPDATE productos SET nombre=?, precio_costo=?,precio_venta=?,stock=?,descripcion=?,fecha_compra=?) WHERE id=?",
+    [nombre, precioCosto, precioVenta, stock, descripcion, fecha, id],
+    (err, result) => {
+      if (err) throw err;
+      res.send("Producto actualizado con exito");
+    }
+  );
+});
+
 app.listen(port, (req, res) => {
   console.log("Servidor corriendo en el puerto " + port);
 });
