@@ -43,7 +43,7 @@ function Productos() {
   };
 
   const deleteProd = (id) => {
-    axios.put("http://localhost:3001/delete/producto" + id).then(() => {
+    axios.delete("http://localhost:3001/delete/producto/" + id).then(() => {
       getProductos();
     });
   };
@@ -135,7 +135,13 @@ function Productos() {
                         >
                           Editar
                         </button>
-                        <button type="button" className="btn btn-danger">
+                        <button
+                          type="button"
+                          className="btn btn-danger"
+                          onClick={() => {
+                            deleteProd(elem.id);
+                          }}
+                        >
                           Eliminar
                         </button>
                       </div>
