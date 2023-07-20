@@ -1,7 +1,20 @@
-import { Modal, Toggle, Button, ButtonToolbar, Placeholder } from "rsuite";
+import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
+import { useState } from "react";
 
 function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
+  const [formData, setFormData] = useState({
+    nombre: "",
+    precio_costo: null,
+    precio_venta: null,
+    stock: null,
+    descripcion: "",
+  });
+
+  const handleChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
   return (
     <>
       <Modal overflow={true} open={isOpen} backdrop={true}>
@@ -25,6 +38,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="Nombre"
                   aria-describedby="basic-addon1"
                   name="nombre"
+                  onChange={handleChange}
                   value={editado.nombre}
                 />
               </div>
