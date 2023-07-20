@@ -50,7 +50,6 @@ function Productos() {
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
             Menú
           </Dropdown.Toggle>
-
           <Dropdown.Menu>
             <Dropdown.Item as={Link} to="/productos">
               Cargar nuevo producto
