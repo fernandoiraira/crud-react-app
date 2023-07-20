@@ -19,7 +19,7 @@ app.post("/create/empleado", (req, res) => {
     [nombre, edad, pais, cargo, antiguedad],
     (err, result) => {
       if (err) throw err;
-      res.send("Empleado registrado con exito");
+      res.send(result);
     }
   );
 });
@@ -44,7 +44,7 @@ app.post("/create/producto", (req, res) => {
     [nombre, precioCosto, precioVenta, stock, descripcion, fecha],
     (err, result) => {
       if (err) throw err;
-      res.send("Producto creado con exito");
+      res.send(result);
     }
   );
 });
@@ -70,17 +70,17 @@ app.put("/update/producto", (req, res) => {
     [nombre, precioCosto, precioVenta, stock, descripcion, fecha, id],
     (err, result) => {
       if (err) throw err;
-      res.send("Producto actualizado con exito");
+      res.send(result);
     }
   );
 });
 
 app.delete("/delete/producto/:id", (req, res) => {
-  const id = req.body.id;
+  const id = req.params.id;
 
-  db.query("DELETE FROM productos WHERE id=?", [id], (err, result) => {
+  db.query("DELETE FROM productos WHERE id=?", id, (err, result) => {
     if (err) throw err;
-    res.send("Producto eliminado con exito");
+    res.send(result);
   });
 });
 
