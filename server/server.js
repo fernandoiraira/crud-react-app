@@ -56,7 +56,7 @@ app.get("/get/productos", (req, res) => {
   });
 });
 
-app.post("/update/producto", (req, res) => {
+app.put("/update/producto", (req, res) => {
   const id = req.body.id;
   const nombre = req.body.nombre;
   const precioCosto = req.body.precioCosto;
