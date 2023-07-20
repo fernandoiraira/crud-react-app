@@ -12,15 +12,12 @@ function Productos() {
   const [productoEditado, setEditado] = useState([]);
   const [overflow, setOverflow] = useState(true);
 
-  const handleEditar = (val) => {
+  const handleEditar = (elem) => {
     setEditar(true);
-    setEditado(val);
-
-    console.log(productoEditado);
+    setEditado(elem);
   };
 
   const handleClose = () => {
-    console.log("asdfasdfasdfas");
     setEditar(false);
   };
 
@@ -54,6 +51,10 @@ function Productos() {
           contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
           isOpen={editar}
           onClose={handleClose}
+          onOk={() => {
+            console.log("Producto enviado!");
+          }}
+          editado={productoEditado}
         />
 
         <Dropdown>
@@ -123,7 +124,9 @@ function Productos() {
                         <button
                           type="button"
                           className="btn btn-info"
-                          onClick={handleEditar}
+                          onClick={() => {
+                            handleEditar(elem);
+                          }}
                         >
                           Editar
                         </button>
