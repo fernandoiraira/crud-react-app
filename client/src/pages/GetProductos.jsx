@@ -58,6 +58,7 @@ function Productos() {
           onClose={handleClose}
           onOk={(response) => {
             console.log("Producto enviado!");
+            console.log(response);
           }}
           editado={productoEditado}
         />
