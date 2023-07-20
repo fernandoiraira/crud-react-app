@@ -9,10 +9,14 @@ function Productos() {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
+  const [productoEditado, setEditado] = useState([]);
   const [overflow, setOverflow] = useState(true);
 
-  const handleEditar = () => {
+  const handleEditar = (val) => {
     setEditar(true);
+    setEditado({ ...productoEditado, [val.target.name]: val.target.value });
+
+    console.log(productoEditado);
   };
 
   const handleClose = () => {
@@ -42,19 +46,16 @@ function Productos() {
     );
   };
 
-  const editarProducto = (val) => {
-    setEditar(true);
-  };
-
   return (
     <div className="container">
       <div className="container">
         <Modal_test
-          titulo="modal 1"
+          titulo=""
           contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
           isOpen={editar}
           onClose={handleClose}
         />
+
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
             Menú
