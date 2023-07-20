@@ -3,11 +3,19 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
+import { Modal, Toggle, Button, ButtonToolbar, Placeholder } from "rsuite";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
+  const [overflow, setOverflow] = useState(true);
+
+  const handleEditar = () => {
+    setEditar(true);
+  };
+
+  const handleClose = () => {};
 
   const handleChange = (event) => {
     setBuscado(event.target.value);
@@ -103,7 +111,11 @@ function Productos() {
                         role="group"
                         aria-label="Basic example"
                       >
-                        <button type="button" className="btn btn-info">
+                        <button
+                          type="button"
+                          className="btn btn-info"
+                          onClick={handleEditar}
+                        >
                           Editar
                         </button>
                         <button type="button" className="btn btn-danger">
