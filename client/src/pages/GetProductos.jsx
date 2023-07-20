@@ -14,7 +14,7 @@ function Productos() {
 
   const handleEditar = (val) => {
     setEditar(true);
-    setEditado({ ...productoEditado, [val.target.name]: val.target.value });
+    setEditado(val);
 
     console.log(productoEditado);
   };
