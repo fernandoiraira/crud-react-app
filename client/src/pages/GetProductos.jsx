@@ -78,6 +78,7 @@ function Productos() {
                 <th scope="col">Stock</th>
                 <th scope="col">Descr.</th>
                 <th scope="col">Fecha Compra</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -91,6 +92,20 @@ function Productos() {
                     <td>{elem.stock} </td>
                     <td>{elem.descripcion} </td>
                     <td>{elem.fecha_compra} </td>
+                    <td>
+                      <div
+                        className="btn-group"
+                        role="group"
+                        aria-label="Basic example"
+                      >
+                        <button type="button" className="btn btn-info">
+                          Editar
+                        </button>
+                        <button type="button" className="btn btn-danger">
+                          Eliminar
+                        </button>
+                      </div>
+                    </td>
                   </tr>
                 );
               })}
