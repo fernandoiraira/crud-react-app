@@ -10,7 +10,6 @@ function Productos() {
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
   const [productoEditado, setEditado] = useState([]);
-  const [overflow, setOverflow] = useState(true);
 
   const handleEditar = (elem) => {
     setEditar(true);
