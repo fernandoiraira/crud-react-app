@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 function Productos() {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
+  const [editar, setEditar] = useState(false);
 
   const handleChange = (event) => {
     setBuscado(event.target.value);
@@ -28,6 +29,10 @@ function Productos() {
     return productosLista.filter((producto) =>
       producto.nombre.toLowerCase().includes(productoBuscado.toLowerCase())
     );
+  };
+
+  const editarProducto = (val) => {
+    setEditar(true);
   };
 
   return (
