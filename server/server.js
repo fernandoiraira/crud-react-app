@@ -66,7 +66,7 @@ app.put("/update/producto", (req, res) => {
   const fecha = new Date();
 
   db.query(
-    "UPDATE productos SET nombre=?, precio_costo=?,precio_venta=?,stock=?,descripcion=?,fecha_compra=?) WHERE id=?",
+    "UPDATE productos SET nombre=?, precio_costo=?,precio_venta=?,stock=?,descripcion=?,fecha_compra=? WHERE id=?",
     [nombre, precioCosto, precioVenta, stock, descripcion, fecha, id],
     (err, result) => {
       if (err) throw err;
