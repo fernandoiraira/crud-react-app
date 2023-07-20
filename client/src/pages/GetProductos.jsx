@@ -31,6 +31,23 @@ function Productos() {
     });
   };
 
+  const update = () => {
+    axios
+      .put("http://localhost:3001/update/producto/", {
+        id: productoEditado.id,
+        nombre: productoEditado.nombre,
+        precioCosto: productoEditado.precio_costo,
+        precioVenta: productoEditado.precio_venta,
+        stock: productoEditado.stock,
+        descripcion: productoEditado.descripcion,
+        fechaCompra: productoEditado.fechaCompra,
+      })
+      .then(() => {
+        getProductos();
+        alert("updated!!!");
+      });
+  };
+
   useEffect(() => {
     getProductos();
   }, []);
@@ -47,7 +64,6 @@ function Productos() {
       getProductos();
     });
   };
-  
 
   return (
     <div className="container">
@@ -58,8 +74,8 @@ function Productos() {
           isOpen={editar}
           onClose={handleClose}
           onOk={(response) => {
-            console.log("Producto enviado!");
-            console.log(response);
+            setEditado(response);
+            update();
           }}
           editado={productoEditado}
         />
