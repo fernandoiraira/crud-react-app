@@ -51,7 +51,7 @@ function Productos() {
           contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
           isOpen={editar}
           onClose={handleClose}
-          onOk={() => {
+          onOk={(response) => {
             console.log("Producto enviado!");
           }}
           editado={productoEditado}
