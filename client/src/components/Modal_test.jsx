@@ -1,7 +1,7 @@
 import { Modal, Toggle, Button, ButtonToolbar, Placeholder } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
-function Modal_test({ titulo, onOk, onClose, isOpen }) {
+function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
   return (
     <>
       <Modal overflow={true} open={isOpen} backdrop={true}>
@@ -25,6 +25,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
                   aria-label="Nombre"
                   aria-describedby="basic-addon1"
                   name="nombre"
+                  value={editado.nombre}
                 />
               </div>
 
@@ -41,6 +42,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
                   aria-label="PrecioCosto"
                   aria-describedby="basic-addon1"
                   name="precioCosto"
+                  value={editado.precio_costo}
                 />
               </div>
 
@@ -57,6 +59,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
                   aria-label="PrecioVenta"
                   aria-describedby="basic-addon1"
                   name="precioVenta"
+                  value={editado.precio_venta}
                 />
               </div>
 
@@ -73,6 +76,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
                   aria-label="Stock"
                   aria-describedby="basic-addon1"
                   name="stock"
+                  value={editado.stock}
                 />
               </div>
 
@@ -89,6 +93,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
                   aria-label="Descripcion"
                   aria-describedby="basic-addon1"
                   name="descripcion"
+                  value={editado.descripcion}
                 />
               </div>
             </div>
@@ -97,10 +102,10 @@ function Modal_test({ titulo, onOk, onClose, isOpen }) {
         </Modal.Body>
         <Modal.Footer>
           <Button appearance="primary" onClick={onOk}>
-            Ok
+            Aceptar
           </Button>
           <Button appearance="subtle" onClick={onClose}>
-            Cancel
+            Cancelar
           </Button>
         </Modal.Footer>
       </Modal>
