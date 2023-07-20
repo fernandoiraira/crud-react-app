@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import { Modal, Toggle, Button, ButtonToolbar, Placeholder } from "rsuite";
+import Modal_test from "../components/Modal_test";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
@@ -15,7 +15,10 @@ function Productos() {
     setEditar(true);
   };
 
-  const handleClose = () => {};
+  const handleClose = () => {
+    console.log("asdfasdfasdfas");
+    setEditar(false);
+  };
 
   const handleChange = (event) => {
     setBuscado(event.target.value);
@@ -46,6 +49,12 @@ function Productos() {
   return (
     <div className="container">
       <div className="container">
+        <Modal_test
+          titulo="modal 1"
+          contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
+          isOpen={editar}
+          onClose={handleClose}
+        />
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
             Menú
