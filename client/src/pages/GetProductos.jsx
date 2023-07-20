@@ -47,6 +47,7 @@ function Productos() {
       getProductos();
     });
   };
+  
 
   return (
     <div className="container">
