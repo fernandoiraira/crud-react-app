@@ -8,12 +8,14 @@ import Productos from "./pages/Productos";
 import Clientes from "./pages/Clientes";
 import Proveedores from "./pages/Proveedores";
 import GetProductos from "./pages/GetProductos";
+import Modal from "./components/Modal";
 
 function App() {
   return (
     <Router>
       <div className="container-fluid">
         <div className="row">
+          <Modal></Modal>
           <div className="col-2 px-0">
             <Sidebar />
           </div>
