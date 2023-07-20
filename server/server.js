@@ -75,6 +75,15 @@ app.put("/update/producto", (req, res) => {
   );
 });
 
+app.delete("/delete/producto/:id", (req, res) => {
+  const id = req.body.id;
+
+  db.query("DELETE FROM productos WHERE id=?", [id], (err, result) => {
+    if (err) throw err;
+    res.send("Producto eliminado con exito");
+  });
+});
+
 app.listen(port, (req, res) => {
   console.log("Servidor corriendo en el puerto " + port);
 });
