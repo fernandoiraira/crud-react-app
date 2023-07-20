@@ -1,6 +1,6 @@
 import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
@@ -13,7 +13,18 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log("cambiando");
   };
+
+  useEffect(() => {
+    setFormData({
+      nombre: editado.nombre || "",
+      precioCosto: editado.precio_costo || null,
+      precioVenta: editado.precio_venta || null,
+      stock: editado.stock || null,
+      descripcion: editado.descripcion || "",
+    });
+  }, [editado]);
 
   return (
     <>
@@ -56,6 +67,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="PrecioCosto"
                   aria-describedby="basic-addon1"
                   name="precioCosto"
+                  onChange={handleChange}
                   defaultValue={editado.precio_costo}
                 />
               </div>
@@ -73,6 +85,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="PrecioVenta"
                   aria-describedby="basic-addon1"
                   name="precioVenta"
+                  onChange={handleChange}
                   defaultValue={editado.precio_venta}
                 />
               </div>
@@ -90,6 +103,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="Stock"
                   aria-describedby="basic-addon1"
                   name="stock"
+                  onChange={handleChange}
                   defaultValue={editado.stock}
                 />
               </div>
@@ -107,6 +121,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
                   aria-label="Descripcion"
                   aria-describedby="basic-addon1"
                   name="descripcion"
+                  onChange={handleChange}
                   defaultValue={editado.descripcion}
                 />
               </div>
@@ -115,7 +130,12 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button appearance="primary" onClick={onOk}>
+          <Button
+            appearance="primary"
+            onClick={() => {
+              onOk(formData);
+            }}
+          >
             Aceptar
           </Button>
           <Button appearance="subtle" onClick={onClose}>
