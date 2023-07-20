@@ -5,7 +5,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
 import Modal_test from "../components/Modal_test";
 
-
 function Productos() {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
@@ -41,6 +40,12 @@ function Productos() {
     return productosLista.filter((producto) =>
       producto.nombre.toLowerCase().includes(productoBuscado.toLowerCase())
     );
+  };
+
+  const deleteProd = (id) => {
+    axios.put("http://localhost:3001/delete/producto" + id).then(() => {
+      getProductos();
+    });
   };
 
   return (
