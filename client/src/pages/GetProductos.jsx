@@ -63,16 +63,6 @@ function Productos() {
       <div className="container">
         <Modal_test
           onOk={(res) => {
-            console.log(
-              "PRODUCTO RECIEN RECIBIDO: " +
-                res.nombre +
-                " " +
-                res.id +
-                " " +
-                res.precioCosto +
-                " " +
-                res.precioVenta
-            );
             setEditado(res);
             update(res);
             handleClose();
