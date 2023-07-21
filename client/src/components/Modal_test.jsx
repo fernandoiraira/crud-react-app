@@ -18,11 +18,11 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
 
   useEffect(() => {
     setFormData({
-      nombre: editado.nombre || "",
-      precioCosto: editado.precio_costo || null,
-      precioVenta: editado.precio_venta || null,
-      stock: editado.stock || null,
-      descripcion: editado.descripcion || "",
+      nombre: editado.nombre,
+      precioCosto: editado.precio_costo,
+      precioVenta: editado.precio_venta,
+      stock: editado.stock,
+      descripcion: editado.descripcion,
     });
   }, [editado]);
 
