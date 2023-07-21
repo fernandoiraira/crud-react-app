@@ -7,6 +7,24 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors());
 
+app.post("/create/cliente", (req, res) => {
+  const nombre = req.body.nombre;
+  const apellido = req.body.apellido;
+  const fecha_nacimiento = req.body.fecha_nacimiento;
+  const email = req.body.email;
+  const telefono = req.body.telefono;
+  const fecha_registro = req.body.fecha_registro;
+
+  db.query(
+    "INSERT INTO clientes (nombre,apellido,fecha_nacimiento,email,telefono,fecha_registro) VALUES (?,?,?,?,?,?)",
+    [nombre, apellido, fecha_nacimiento, email, telefono, fecha_registro],
+    (err, result) => {
+      if (err) throw err;
+      res.send(result);
+    }
+  );
+});
+
 app.post("/create/empleado", (req, res) => {
   const nombre = req.body.nombre;
   const edad = req.body.edad;
