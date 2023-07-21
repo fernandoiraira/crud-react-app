@@ -9,7 +9,7 @@ function Productos() {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
-  const [productoEditado, setEditado] = useState([]);
+  const [productoEditado, setEditado] = useState({});
 
   const handleEditar = (elem) => {
     setEditar(true);
@@ -32,16 +32,9 @@ function Productos() {
   };
 
   const update = () => {
+    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", productoEditado);
     axios
-      .put("http://localhost:3001/update/producto/", {
-        id: productoEditado.id,
-        nombre: productoEditado.nombre,
-        precioCosto: productoEditado.precio_costo,
-        precioVenta: productoEditado.precio_venta,
-        stock: productoEditado.stock,
-        descripcion: productoEditado.descripcion,
-        fechaCompra: productoEditado.fechaCompra,
-      })
+      .put("http://localhost:3001/update/producto/", productoEditado) // Envía el objeto completo en la solicitud PUT
       .then(() => {
         getProductos();
         alert("updated!!!");
@@ -72,11 +65,13 @@ function Productos() {
           titulo=""
           contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
           isOpen={editar}
-          onClose={handleClose}
-          onOk={(response) => {
-            setEditado(response);
+          onOk={(res) => {
+            console.log("PRODUCTO RECIEN RECIBIDO: " + res);
+            setEditado(res);
             update();
+            handleClose();
           }}
+          onClose={handleClose}
           editado={productoEditado}
         />
 
