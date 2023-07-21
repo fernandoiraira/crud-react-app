@@ -2,7 +2,7 @@ import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { useState, useEffect } from "react";
 
-function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
+function Modal_test({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
     nombre: "",
     precio_costo: null,
