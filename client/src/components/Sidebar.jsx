@@ -1,8 +1,7 @@
 import { Sidenav, Nav } from "rsuite";
 import { useState } from "react";
 import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
-import MagicIcon from "@rsuite/icons/legacy/Magic";
-import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
+import CouponIcon from "@rsuite/icons/Coupon";
 import "rsuite/dist/rsuite.min.css";
 import TrendIcon from "@rsuite/icons/Trend";
 import PeoplesIcon from "@rsuite/icons/Peoples";
@@ -23,7 +22,7 @@ function Sidebar() {
               placement="rightStart"
               eventKey="3"
               title="Productos"
-              icon={<MagicIcon />}
+              icon={<CouponIcon />}
             >
               <Nav.Item eventKey="3-1" as={Link} to="/productos">
                 Cargar Producto
