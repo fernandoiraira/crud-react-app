@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 function Modal_test({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
+    id: null,
     nombre: "",
     precio_costo: null,
     precio_venta: null,
@@ -18,6 +19,7 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
 
   useEffect(() => {
     setFormData({
+      id: editado.id,
       nombre: editado.nombre,
       precioCosto: editado.precio_costo,
       precioVenta: editado.precio_venta,
