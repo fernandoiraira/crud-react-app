@@ -63,7 +63,6 @@ function Productos() {
       <div className="container">
         <Modal_test
           titulo=""
-          isOpen={editar}
           onOk={(res) => {
             console.log("PRODUCTO RECIEN RECIBIDO: " + res);
             setEditado(res);
@@ -71,6 +70,7 @@ function Productos() {
             handleClose();
           }}
           onClose={handleClose}
+          isOpen={editar}
           editado={productoEditado}
         />
 
