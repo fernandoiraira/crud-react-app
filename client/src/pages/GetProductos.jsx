@@ -63,7 +63,6 @@ function Productos() {
       <div className="container">
         <Modal_test
           titulo=""
-          contenido="Descripcion de la infomacion del producto, ademas de los inputs necesarios para poder modificarlos"
           isOpen={editar}
           onOk={(res) => {
             console.log("PRODUCTO RECIEN RECIBIDO: " + res);
