@@ -13,7 +13,7 @@ import "rsuite/dist/rsuite.min.css";
 function App() {
   return (
     <Router>
-      <div className="container-fluid vh-100">
+      <div className="container-fluid vh-100 main-container">
         <div className="row vh-100">
           <div className="col-2 px-0 vh-100">
             <Sidebar />
