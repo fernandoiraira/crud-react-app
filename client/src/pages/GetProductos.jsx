@@ -62,7 +62,6 @@ function Productos() {
     <div className="container">
       <div className="container">
         <Modal_test
-          titulo=""
           onOk={(res) => {
             console.log("PRODUCTO RECIEN RECIBIDO: " + res);
             setEditado(res);
