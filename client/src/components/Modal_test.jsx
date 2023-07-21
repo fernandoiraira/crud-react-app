@@ -26,7 +26,7 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
       precioVenta: editado.precio_venta,
       stock: editado.stock,
       descripcion: editado.descripcion,
-      fecha_compra: editado.fechaCompra,
+      fecha_compra: editado.fecha_compra,
     });
   }, [editado]);
 
