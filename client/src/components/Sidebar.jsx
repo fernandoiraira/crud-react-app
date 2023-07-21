@@ -5,6 +5,7 @@ import GroupIcon from "@rsuite/icons/legacy/Group";
 import MagicIcon from "@rsuite/icons/legacy/Magic";
 import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
 import "rsuite/dist/rsuite.min.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   const [expanded, setExpanded] = useState(true);
@@ -14,22 +15,29 @@ function Sidebar() {
       <Sidenav expanded={expanded} defaultOpenKeys={["3", "4"]}>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={setActiveKey}>
-            <Nav.Item eventKey="1" icon={<DashboardIcon />}>
+            <Nav.Item eventKey="1" icon={<DashboardIcon />} as={Link} to="/">
               GESTIÓN
             </Nav.Item>
-            <Nav.Item eventKey="2" icon={<GroupIcon />}>
+            <Nav.Item
+              eventKey="2"
+              icon={<GroupIcon />}
+              as={Link}
+              to="/clientes"
+            >
               Clientes
             </Nav.Item>
             <Nav.Menu
               placement="rightStart"
               eventKey="3"
-              title="Advanced"
+              title="Productos"
               icon={<MagicIcon />}
             >
-              <Nav.Item eventKey="3-1">Geo</Nav.Item>
-              <Nav.Item eventKey="3-2">Devices</Nav.Item>
-              <Nav.Item eventKey="3-3">Loyalty</Nav.Item>
-              <Nav.Item eventKey="3-4">Visit Depth</Nav.Item>
+              <Nav.Item eventKey="3-1" as={Link} to="/productos">
+                Cargar Producto
+              </Nav.Item>
+              <Nav.Item eventKey="3-2" as={Link} to="/get/productos">
+                Consultar Productos
+              </Nav.Item>
             </Nav.Menu>
             <Nav.Menu
               placement="rightStart"
