@@ -6,13 +6,14 @@ import "rsuite/dist/rsuite.min.css";
 import TrendIcon from "@rsuite/icons/Trend";
 import PeoplesIcon from "@rsuite/icons/Peoples";
 import { Link } from "react-router-dom";
+import "./Sidebar.css";
 
 function Sidebar() {
   const [expanded, setExpanded] = useState(true);
   const [activeKey, setActiveKey] = useState("1");
   return (
     <div style={{ width: 240 }}>
-      <Sidenav expanded={expanded} defaultOpenKeys={["3", "4"]}>
+      <Sidenav expanded={expanded}>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={setActiveKey}>
             <Nav.Item eventKey="1" icon={<DashboardIcon />} as={Link} to="/">
@@ -55,10 +56,7 @@ function Sidebar() {
             </Nav.Menu>
           </Nav>
         </Sidenav.Body>
-        <Sidenav.Toggle
-          expanded={expanded}
-          onToggle={(expanded) => setExpanded(expanded)}
-        />
+        <Sidenav.Toggle onToggle={(expanded) => setExpanded(expanded)} />
       </Sidenav>
     </div>
   );
