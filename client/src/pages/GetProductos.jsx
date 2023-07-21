@@ -1,8 +1,6 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Dropdown from "react-bootstrap/Dropdown";
-import { Link } from "react-router-dom";
 import Modalreact from "../components/Modal-react";
 
 function Productos() {
@@ -71,20 +69,6 @@ function Productos() {
           isOpen={editar}
           editado={productoEditado}
         />
-
-        <Dropdown>
-          <Dropdown.Toggle variant="primary" id="dropdown-basic">
-            Menú
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item as={Link} to="/productos">
-              Cargar nuevo producto
-            </Dropdown.Item>
-            <Dropdown.Item as={Link} to="/get/productos">
-              Todos los productos
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
       </div>
       <div className="card text-center mt-5">
         <div className="card-header">LISTA DE PRODUCTOS</div>
