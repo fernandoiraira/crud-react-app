@@ -31,10 +31,10 @@ function Productos() {
     });
   };
 
-  const update = () => {
-    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", productoEditado);
+  const update = (res) => {
+    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", res);
     axios
-      .put("http://localhost:3001/update/producto/", productoEditado) // Envía el objeto completo en la solicitud PUT
+      .put("http://localhost:3001/update/producto/", res) // Envía el objeto completo en la solicitud PUT
       .then(() => {
         getProductos();
         alert("updated!!!");
@@ -63,9 +63,9 @@ function Productos() {
       <div className="container">
         <Modal_test
           onOk={(res) => {
-            console.log("PRODUCTO RECIEN RECIBIDO: " + res);
+            console.log("PRODUCTO RECIEN RECIBIDO: " + res.nombre);
             setEditado(res);
-            update();
+            update(res);
             handleClose();
           }}
           onClose={handleClose}
