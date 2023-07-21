@@ -29,9 +29,6 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
   return (
     <>
       <Modal overflow={true} open={isOpen} backdrop={true}>
-        <Modal.Header>
-          <Modal.Title>{titulo}</Modal.Title>
-        </Modal.Header>
         <Modal.Body>
           <div className="card text-center">
             <div className="card-header">Editar Producto</div>
