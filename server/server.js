@@ -59,11 +59,13 @@ app.get("/get/productos", (req, res) => {
 app.put("/update/producto", (req, res) => {
   const id = req.body.id;
   const nombre = req.body.nombre;
-  const precioCosto = req.body.precio_costo;
-  const precioVenta = req.body.precio_venta;
+  const precioCosto = req.body.precioCosto;
+  const precioVenta = req.body.precioVenta;
   const stock = req.body.stock;
   const descripcion = req.body.descripcion;
   const fecha = req.body.fecha_compra;
+
+  console.log(req.body);
 
   console.log(id, nombre, precioCosto, precioVenta, stock, descripcion, fecha);
 
