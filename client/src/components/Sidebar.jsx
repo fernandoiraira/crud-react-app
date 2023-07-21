@@ -38,8 +38,12 @@ function Sidebar() {
               title="Clientes"
               icon={<PeoplesIcon />}
             >
-              <Nav.Item eventKey="4-1">Cargar Cliente</Nav.Item>
-              <Nav.Item eventKey="4-2">Consultar Clientes</Nav.Item>
+              <Nav.Item eventKey="4-1" as={Link} to="/clientes">
+                Cargar Cliente
+              </Nav.Item>
+              <Nav.Item eventKey="4-2" as={Link} to="/get/clientes">
+                Consultar Clientes
+              </Nav.Item>
               {/* <Nav.Menu eventKey="4-5" title="Custom Action">
                 <Nav.Item eventKey="4-5-1">Action Name</Nav.Item>
                 <Nav.Item eventKey="4-5-2">Action Params</Nav.Item>
@@ -51,8 +55,12 @@ function Sidebar() {
               title="Ventas"
               icon={<TrendIcon />}
             >
-              <Nav.Item eventKey="5-1">Cargar Venta</Nav.Item>
-              <Nav.Item eventKey="5-2">Consultar Ventas</Nav.Item>
+              <Nav.Item eventKey="5-1" as={Link} to="/ventas">
+                Cargar Venta
+              </Nav.Item>
+              <Nav.Item eventKey="5-2" as={Link} to="/get/ventas">
+                Consultar Ventas
+              </Nav.Item>
             </Nav.Menu>
           </Nav>
         </Sidenav.Body>
