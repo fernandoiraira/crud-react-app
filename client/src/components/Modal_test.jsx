@@ -13,7 +13,7 @@ function Modal_test({ titulo, onOk, onClose, isOpen, editado }) {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log("cambiando");
+    console.log(formData);
   };
 
   useEffect(() => {
