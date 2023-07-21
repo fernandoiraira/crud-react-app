@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import Modal_test from "../components/Modal_test";
+import Modalreact from "../components/Modal-react";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
@@ -61,7 +61,7 @@ function Productos() {
   return (
     <div className="container">
       <div className="container">
-        <Modal_test
+        <Modalreact
           onOk={(res) => {
             setEditado(res);
             update(res);
