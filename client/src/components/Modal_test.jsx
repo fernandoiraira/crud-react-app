@@ -10,6 +10,7 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
     precio_venta: null,
     stock: null,
     descripcion: "",
+    fecha_compra: null,
   });
 
   const handleChange = (event) => {
@@ -25,6 +26,7 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
       precioVenta: editado.precio_venta,
       stock: editado.stock,
       descripcion: editado.descripcion,
+      fecha_compra: editado.fechaCompra,
     });
   }, [editado]);
 
