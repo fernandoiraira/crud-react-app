@@ -1,58 +1,59 @@
-import {
-  CDBSidebar,
-  CDBSidebarContent,
-  CDBSidebarFooter,
-  CDBSidebarHeader,
-  CDBSidebarMenu,
-  CDBSidebarMenuItem,
-} from "cdbreact";
-import { Link } from "react-router-dom";
+import { Sidenav, Nav } from "rsuite";
+import { useState } from "react";
+import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
+import GroupIcon from "@rsuite/icons/legacy/Group";
+import MagicIcon from "@rsuite/icons/legacy/Magic";
+import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
+import "rsuite/dist/rsuite.min.css";
 
-const Sidebar = () => {
+function Sidebar() {
+  const [expanded, setExpanded] = useState(true);
+  const [activeKey, setActiveKey] = useState("1");
   return (
-    <div
-      style={{ display: "flex", height: "100vh", overflow: "scroll initial" }}
-    >
-      <CDBSidebar textColor="#fff" backgroundColor="#333">
-        <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large"></i>}>
-          <a
-            href="/"
-            className="text-decoration-none"
-            style={{ color: "inherit" }}
-          >
-            Sidebar
-          </a>
-        </CDBSidebarHeader>
-
-        <CDBSidebarContent className="sidebar-content">
-          <CDBSidebarMenu>
-            <Link exact to="/productos" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="box">Productos</CDBSidebarMenuItem>
-            </Link>
-            <Link exact to="/ventas" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="table">Ventas</CDBSidebarMenuItem>
-            </Link>
-            <Link exact to="/clientes" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Clientes</CDBSidebarMenuItem>
-            </Link>
-            <Link exact to="/proveedores" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="truck">Proveedores</CDBSidebarMenuItem>
-            </Link>
-          </CDBSidebarMenu>
-        </CDBSidebarContent>
-
-        <CDBSidebarFooter style={{ textAlign: "center" }}>
-          <div
-            style={{
-              padding: "20px 5px",
-            }}
-          >
-            Footer
-          </div>
-        </CDBSidebarFooter>
-      </CDBSidebar>
+    <div style={{ width: 240 }}>
+      <Sidenav expanded={expanded} defaultOpenKeys={["3", "4"]}>
+        <Sidenav.Body>
+          <Nav activeKey={activeKey} onSelect={setActiveKey}>
+            <Nav.Item eventKey="1" icon={<DashboardIcon />}>
+              GESTIÓN
+            </Nav.Item>
+            <Nav.Item eventKey="2" icon={<GroupIcon />}>
+              Clientes
+            </Nav.Item>
+            <Nav.Menu
+              placement="rightStart"
+              eventKey="3"
+              title="Advanced"
+              icon={<MagicIcon />}
+            >
+              <Nav.Item eventKey="3-1">Geo</Nav.Item>
+              <Nav.Item eventKey="3-2">Devices</Nav.Item>
+              <Nav.Item eventKey="3-3">Loyalty</Nav.Item>
+              <Nav.Item eventKey="3-4">Visit Depth</Nav.Item>
+            </Nav.Menu>
+            <Nav.Menu
+              placement="rightStart"
+              eventKey="4"
+              title="Settings"
+              icon={<GearCircleIcon />}
+            >
+              <Nav.Item eventKey="4-1">Applications</Nav.Item>
+              <Nav.Item eventKey="4-2">Channels</Nav.Item>
+              <Nav.Item eventKey="4-3">Versions</Nav.Item>
+              <Nav.Menu eventKey="4-5" title="Custom Action">
+                <Nav.Item eventKey="4-5-1">Action Name</Nav.Item>
+                <Nav.Item eventKey="4-5-2">Action Params</Nav.Item>
+              </Nav.Menu>
+            </Nav.Menu>
+          </Nav>
+        </Sidenav.Body>
+        <Sidenav.Toggle
+          expanded={expanded}
+          onToggle={(expanded) => setExpanded(expanded)}
+        />
+      </Sidenav>
     </div>
   );
-};
+}
 
 export default Sidebar;
