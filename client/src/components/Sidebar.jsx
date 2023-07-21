@@ -5,6 +5,7 @@ import MagicIcon from "@rsuite/icons/legacy/Magic";
 import GearCircleIcon from "@rsuite/icons/legacy/GearCircle";
 import "rsuite/dist/rsuite.min.css";
 import TrendIcon from "@rsuite/icons/Trend";
+import PeoplesIcon from "@rsuite/icons/Peoples";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
@@ -35,7 +36,7 @@ function Sidebar() {
               placement="rightStart"
               eventKey="4"
               title="Clientes"
-              icon={<GearCircleIcon />}
+              icon={<PeoplesIcon />}
             >
               <Nav.Item eventKey="4-1">Cargar Cliente</Nav.Item>
               <Nav.Item eventKey="4-2">Consultar Clientes</Nav.Item>
