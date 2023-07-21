@@ -59,14 +59,16 @@ app.get("/get/productos", (req, res) => {
 app.put("/update/producto", (req, res) => {
   const id = req.body.id;
   const nombre = req.body.nombre;
-  const precioCosto = req.body.precioCosto;
-  const precioVenta = req.body.precioVenta;
+  const precioCosto = req.body.precio_costo;
+  const precioVenta = req.body.precio_venta;
   const stock = req.body.stock;
   const descripcion = req.body.descripcion;
-  const fecha = new Date();
+  const fecha = req.body.fecha_compra;
+
+  console.log(id, nombre, precioCosto, precioVenta, stock, descripcion, fecha);
 
   db.query(
-    "UPDATE productos SET nombre=?, precio_costo=?,precio_venta=?,stock=?,descripcion=?,fecha_compra=? WHERE id=?",
+    "UPDATE productos SET nombre=?,precio_costo=?,precio_venta=?,stock=?,descripcion=?,fecha_compra=? WHERE id=?",
     [nombre, precioCosto, precioVenta, stock, descripcion, fecha, id],
     (err, result) => {
       if (err) throw err;
