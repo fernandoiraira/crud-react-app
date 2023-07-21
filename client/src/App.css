@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.main-container {
+  background-color: rgb(201, 231, 219);
+}
+
 .datos {
   display: flex;
   flex-direction: column;
