@@ -19,6 +19,18 @@ function Productos() {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
+  const resetFormData = () => {
+    setFormData({
+      id: null,
+      nombre: "",
+      precioCosto: null,
+      precioVenta: null,
+      stock: null,
+      descripcion: "",
+      fechaCompra: null,
+    });
+  };
+
   const add = () => {
     axios
       .post("http://localhost:3001/create/producto", {
@@ -30,6 +42,7 @@ function Productos() {
       })
       .then(() => {
         alert("Producto registrado!");
+        resetFormData();
       });
   };
 
