@@ -25,6 +25,13 @@ app.post("/create/cliente", (req, res) => {
   );
 });
 
+app.get("/get/clientes", (req, res) => {
+  db.query("SELECT * FROM clientes", (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
+
 app.post("/create/empleado", (req, res) => {
   const nombre = req.body.nombre;
   const edad = req.body.edad;
