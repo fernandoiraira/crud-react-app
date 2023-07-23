@@ -67,18 +67,15 @@ function Clientes() {
   };
 
   const handleAdd = () => {
-    const nombre = inputData.nombre;
-    const apellido = inputData.apellido;
-    const fechaNacimiento = inputData.fechaNacimiento;
-    const email = inputData.email;
-    const telefono = inputData.telefono;
-    const fechaRegistro = inputData.fechaRegistro;
-
     axios
-      .post(
-        "INSERT INTO clientes (nombre,apellido,fecha_nacimiento,email,telefono,fecha_registro) VALUES (?,?,?,?,?,?,)",
-        [nombre, apellido, fechaNacimiento, email, telefono, fechaRegistro]
-      )
+      .post("http://localhost:3001/create/cliente", {
+        nombre: inputData.nombre,
+        apellido: inputData.apellido,
+        fechaNacimiento: inputData.fechaNacimiento,
+        email: inputData.email,
+        telefono: inputData.telefono,
+        fechaRegistro: inputData.fechaRegistro,
+      })
       .then(
         alert(() => {
           "Cliente registrado con exito!";
