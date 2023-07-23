@@ -1,3 +1,10 @@
+import Buscador from "../components/Buscador";
+
 export default function ErrorPage() {
-  return <h1>LA PAGINA A LA QUE SE QUISO ACCEDER NO EXISTE!</h1>;
+  return (
+    <Buscador
+      titulo="LISTA DE PRODUCTOS TEST"
+      placeholder="Ingrese el nombre del producto test"
+    />
+  );
 }
