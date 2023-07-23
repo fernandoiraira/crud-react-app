@@ -3,7 +3,14 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Modalreact from "../components/Modal-react";
 
-function Buscador({ titulo, placeholder }) {
+function Buscador({
+  encabezado,
+  titulo,
+  placeholder,
+  handleGet,
+  handleUpdate,
+  handleDelete,
+}) {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
@@ -23,22 +30,6 @@ function Buscador({ titulo, placeholder }) {
     console.log(productoBuscado);
   };
 
-  const getProductos = () => {
-    axios.get("http://localhost:3001/get/productos").then((response) => {
-      setProductos(response.data);
-    });
-  };
-
-  const update = (res) => {
-    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", res);
-    axios
-      .put("http://localhost:3001/update/producto/", res) // Envía el objeto completo en la solicitud PUT
-      .then(() => {
-        getProductos();
-        alert("updated!!!");
-      });
-  };
-
   useEffect(() => {
     getProductos();
   }, []);
@@ -50,10 +41,29 @@ function Buscador({ titulo, placeholder }) {
     );
   };
 
+  //HANDLE DELETE
   const deleteProd = (id) => {
     axios.delete("http://localhost:3001/delete/producto/" + id).then(() => {
       getProductos();
     });
+  };
+
+  //HANDLE GET
+  const getProductos = () => {
+    axios.get("http://localhost:3001/get/productos").then((response) => {
+      setProductos(response.data);
+    });
+  };
+
+  //HANDLE UPDATE
+  const update = (res) => {
+    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", res);
+    axios
+      .put("http://localhost:3001/update/producto/", res) // Envía el objeto completo en la solicitud PUT
+      .then(() => {
+        getProductos();
+        alert("updated!!!");
+      });
   };
 
   return (
@@ -93,13 +103,9 @@ function Buscador({ titulo, placeholder }) {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio Costo</th>
-                <th scope="col">Precio Venta</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Descr.</th>
-                <th scope="col">Fecha Compra</th>
+                {encabezado.map((elem) => {
+                  return <th scope="col">{elem}</th>;
+                })}
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
