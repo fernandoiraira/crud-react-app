@@ -1,3 +1,5 @@
+import Formulario from "../components/Formulario";
+
 export default function ErrorPage() {
-  return <h1>ESTA ES LA PAGINA DE ERROR</h1>;
+  return <Formulario />;
 }
