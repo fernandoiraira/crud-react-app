@@ -62,11 +62,11 @@ app.post("/create/producto", (req, res) => {
   const precioVenta = req.body.precioVenta;
   const stock = req.body.stock;
   const descripcion = req.body.descripcion;
-  const fecha = new Date();
+  const fechaCompra = req.body.fechaCompra;
 
   db.query(
     "INSERT INTO productos (nombre,precio_costo,precio_venta,stock,descripcion,fecha_compra) VALUES (?,?,?,?,?,?)",
-    [nombre, precioCosto, precioVenta, stock, descripcion, fecha],
+    [nombre, precioCosto, precioVenta, stock, descripcion, fechaCompra],
     (err, result) => {
       if (err) throw err;
       res.send(result);
