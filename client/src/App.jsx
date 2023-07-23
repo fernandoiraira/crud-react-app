@@ -8,6 +8,7 @@ import Productos from "./pages/Productos";
 import Clientes from "./pages/Clientes";
 import Proveedores from "./pages/Proveedores";
 import GetProductos from "./pages/GetProductos";
+import GetClientes from "./pages/GetClientes";
 import "rsuite/dist/rsuite.min.css";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/productos" element={<Productos />} />
                 <Route path="/get/productos" element={<GetProductos />} />
                 <Route path="/clientes" element={<Clientes />} />
+                <Route path="/get/clientes" element={<GetClientes />} />
                 <Route path="/proveedores" element={<Proveedores />} />
                 <Route path="*" element={<ErrorPage />} />
               </Routes>
