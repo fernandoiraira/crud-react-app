@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Modalreact from "../components/Modal-react";
 
-function Buscador() {
+function Buscador({ titulo, placeholder }) {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
@@ -71,7 +71,7 @@ function Buscador() {
         />
       </div>
       <div className="card text-center mt-5">
-        <div className="card-header">LISTA DE PRODUCTOS</div>
+        <div className="card-header">{titulo}</div>
         <div className="card-body">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -82,7 +82,7 @@ function Buscador() {
             <input
               type="text"
               className="form-control"
-              placeholder="Ingrese el nombre del producto"
+              placeholder={placeholder}
               aria-label="Nombre"
               aria-describedby="basic-addon1"
               onChange={handleChange}
