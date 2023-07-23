@@ -11,14 +11,14 @@ function Buscador({
   delPath,
   updatePath,
 }) {
-  const [productosLista, setProductos] = useState([]);
-  const [productoBuscado, setBuscado] = useState("");
+  const [itemsLista, setItemsLista] = useState([]);
+  const [itemBuscado, setItemBuscado] = useState("");
   const [editar, setEditar] = useState(false);
-  const [productoEditado, setEditado] = useState({});
+  const [itemEditado, setItemEditado] = useState({});
 
   const handleEditar = (elem) => {
     setEditar(true);
-    setEditado(elem);
+    setItemEditado(elem);
   };
 
   const handleClose = () => {
@@ -26,8 +26,8 @@ function Buscador({
   };
 
   const handleChange = (event) => {
-    setBuscado(event.target.value);
-    console.log(productoBuscado);
+    setItemBuscado(event.target.value);
+    console.log(itemBuscado);
   };
 
   useEffect(() => {
@@ -36,8 +36,8 @@ function Buscador({
 
   // Función para filtrar los productos por el nombre buscado
   const filtrarProductos = () => {
-    return productosLista.filter((producto) =>
-      producto.nombre.toLowerCase().includes(productoBuscado.toLowerCase())
+    return itemsLista.filter((producto) =>
+      producto.nombre.toLowerCase().includes(itemBuscado.toLowerCase())
     );
   };
 
@@ -51,7 +51,7 @@ function Buscador({
   //HANDLE GET
   const getProductos = () => {
     axios.get(getPath).then((response) => {
-      setProductos(response.data);
+      setItemsLista(response.data);
     });
   };
 
@@ -71,13 +71,13 @@ function Buscador({
       <div className="container">
         <Modalreact
           onOk={(res) => {
-            setEditado(res);
+            setItemEditado(res);
             update(res);
             handleClose();
           }}
           onClose={handleClose}
           isOpen={editar}
-          editado={productoEditado}
+          editado={itemEditado}
         />
       </div>
       <div className="card text-center mt-5">
