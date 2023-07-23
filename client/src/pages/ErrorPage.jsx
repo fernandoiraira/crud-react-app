@@ -17,18 +17,23 @@ export default function ErrorPage() {
   ];
 
   const handleGet = () => {};
-
   const handleUpdate = () => {};
-  const handleDelete = () => {};
+  const handleDelete = (id) => {
+    axios.delete(delPath + id).then(() => {
+      {
+        /* getProductos() */
+      }
+    });
+  };
 
   return (
     <Buscador
       titulo="LISTA DE PRODUCTOS TEST"
       placeholder="Ingrese el nombre del producto test"
       encabezado={dataEncabezado}
-      handleGet={handleGet}
-      handleUpdate={handleUpdate}
-      handleDelete={handleDelete}
+      getPath={getPath}
+      updatePath={updatePath}
+      delPath={delPath}
     />
   );
 }
