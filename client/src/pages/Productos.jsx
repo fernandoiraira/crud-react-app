@@ -1,6 +1,7 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import axios from "axios";
+import Formulario from "../components/Formulario";
 
 function Productos() {
   const [formData, setFormData] = useState({
