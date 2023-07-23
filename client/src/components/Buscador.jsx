@@ -31,25 +31,25 @@ function Buscador({
   };
 
   useEffect(() => {
-    getProductos();
+    getItems();
   }, []);
 
   // Función para filtrar los productos por el nombre buscado
-  const filtrarProductos = () => {
-    return itemsLista.filter((producto) =>
-      producto.nombre.toLowerCase().includes(itemBuscado.toLowerCase())
+  const filtrarItems = () => {
+    return itemsLista.filter((item) =>
+      item.nombre.toLowerCase().includes(itemBuscado.toLowerCase())
     );
   };
 
   //HANDLE DELETE
-  const deleteProd = (id) => {
+  const handleDelete = (id) => {
     axios.delete(delPath + id).then(() => {
-      getProductos();
+      getItems();
     });
   };
 
   //HANDLE GET
-  const getProductos = () => {
+  const getItems = () => {
     axios.get(getPath).then((response) => {
       setItemsLista(response.data);
     });
@@ -57,11 +57,10 @@ function Buscador({
 
   //HANDLE UPDATE
   const update = (res) => {
-    console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", res);
     axios
       .put(updatePath, res) // Envía el objeto completo en la solicitud PUT
       .then(() => {
-        getProductos();
+        getItems();
         alert("updated!!!");
       });
   };
@@ -110,7 +109,7 @@ function Buscador({
               </tr>
             </thead>
             <tbody>
-              {filtrarProductos().map((elem, key) => {
+              {filtrarItems().map((elem, key) => {
                 return (
                   <tr key={key}>
                     <td>{elem.id}</td>
@@ -139,7 +138,7 @@ function Buscador({
                           type="button"
                           className="btn btn-danger"
                           onClick={() => {
-                            deleteProd(elem.id);
+                            handleDelete(elem.id);
                           }}
                         >
                           Eliminar
