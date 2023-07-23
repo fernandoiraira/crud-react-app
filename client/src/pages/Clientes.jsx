@@ -76,12 +76,10 @@ function Clientes() {
         telefono: inputData.telefono,
         fecha_registro: inputData.fechaRegistro,
       })
-      .then(
-        alert(() => {
-          "Cliente registrado con exito!";
-          resetInputData();
-        })
-      );
+      .then(() => {
+        alert("Cliente registrado con exito!");
+        resetInputData();
+      });
   };
 
   return (
