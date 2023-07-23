@@ -71,10 +71,10 @@ function Clientes() {
       .post("http://localhost:3001/create/cliente", {
         nombre: inputData.nombre,
         apellido: inputData.apellido,
-        fechaNacimiento: inputData.fechaNacimiento,
+        fecha_nacimiento: inputData.fechaNacimiento,
         email: inputData.email,
         telefono: inputData.telefono,
-        fechaRegistro: inputData.fechaRegistro,
+        fecha_registro: inputData.fechaRegistro,
       })
       .then(
         alert(() => {
