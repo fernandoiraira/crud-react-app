@@ -1,10 +1,9 @@
 import Buscador from "../components/Buscador";
-import axios from "axios";
 
 export default function ErrorPage() {
-  const getPath = "http://localhost:3001/get/clientes";
-  const delPath = "http://localhost:3001/delete/cliente";
-  const updatePath = "http://localhost:3001/update/cliente";
+  const getPath = "http://localhost:3001/get/productos";
+  const delPath = "http://localhost:3001/delete/producto";
+  const updatePath = "http://localhost:3001/update/producto";
 
   const dataEncabezado = [
     "ID",
@@ -15,16 +14,6 @@ export default function ErrorPage() {
     "Descripcion",
     "Fecha de Compra",
   ];
-
-  const handleGet = () => {};
-  const handleUpdate = () => {};
-  const handleDelete = (id) => {
-    axios.delete(delPath + id).then(() => {
-      {
-        /* getProductos() */
-      }
-    });
-  };
 
   return (
     <Buscador
