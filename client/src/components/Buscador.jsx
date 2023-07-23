@@ -7,9 +7,9 @@ function Buscador({
   encabezado,
   titulo,
   placeholder,
-  handleGet,
-  handleUpdate,
-  handleDelete,
+  getPath,
+  delPath,
+  updatePath,
 }) {
   const [productosLista, setProductos] = useState([]);
   const [productoBuscado, setBuscado] = useState("");
@@ -43,14 +43,14 @@ function Buscador({
 
   //HANDLE DELETE
   const deleteProd = (id) => {
-    axios.delete("http://localhost:3001/delete/producto/" + id).then(() => {
+    axios.delete(delPath + id).then(() => {
       getProductos();
     });
   };
 
   //HANDLE GET
   const getProductos = () => {
-    axios.get("http://localhost:3001/get/productos").then((response) => {
+    axios.get(getPath).then((response) => {
       setProductos(response.data);
     });
   };
@@ -59,7 +59,7 @@ function Buscador({
   const update = (res) => {
     console.log("PRODUCTO EDITADO A ENVIAR AL SERVER:", res);
     axios
-      .put("http://localhost:3001/update/producto/", res) // Envía el objeto completo en la solicitud PUT
+      .put(updatePath, res) // Envía el objeto completo en la solicitud PUT
       .then(() => {
         getProductos();
         alert("updated!!!");
