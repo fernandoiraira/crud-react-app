@@ -1,4 +1,6 @@
 import Formulario from "../components/Formulario";
+import { useState } from "react";
+import axios from "axios";
 
 function Clientes() {
   const dataFormulario = [
@@ -40,12 +42,29 @@ function Clientes() {
     },
   ];
 
+  const [inputData, setInputData] = useState({
+    nombre: "",
+    apellido: "",
+    fechaNacimiento: null,
+    email: "",
+    telefono: null,
+    fechaRegistro: null,
+  });
+
+  const handleChange = (event) => {
+    setInputData({ ...inputData, [event.target.name]: event.target.value });
+  };
+
+  const handleAdd = () => {
+    axios.post();
+  };
+
   return (
     <Formulario
       titulo="CARGA DE CLIENTES"
       atributos={dataFormulario}
-      handleChange={null}
-      handleAdd={null}
+      handleChange={handleChange}
+      handleAdd={handleAdd}
     />
   );
 }
