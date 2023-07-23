@@ -38,6 +38,7 @@ function Productos() {
         precioVenta: formData.precioVenta,
         stock: formData.stock,
         descripcion: formData.descripcion,
+        fechaCompra: formData.fechaCompra,
       })
       .then(() => {
         alert("Producto registrado!");
