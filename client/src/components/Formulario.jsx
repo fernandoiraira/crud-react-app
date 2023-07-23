@@ -1,11 +1,11 @@
 import React from "react";
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-function Formulario({ atributos, handleChange, handleAdd }) {
+function Formulario({ titulo, atributos, handleChange, handleAdd }) {
   return (
     <div className="container">
       <div className="card text-center mt-5">
-        <div className="card-header">CARGA DE PRODUCTOS</div>
+        <div className="card-header">{titulo}</div>
         <div className="card-body">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -23,6 +23,8 @@ function Formulario({ atributos, handleChange, handleAdd }) {
               name="nombre"
             />
           </div>
+
+          {/*---------------------------------------------------------------*/}
 
           <div className="input-group mb-3">
             <div className="input-group-prepend">
