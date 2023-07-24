@@ -1,7 +1,6 @@
 import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { useState, useEffect } from "react";
-import Formulario from "./Formulario";
 
 function Modal_test({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
@@ -30,6 +29,45 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
       fecha_compra: editado.fecha_compra,
     });
   }, [editado]);
+
+  const atributos = [
+    {
+      label: "Nombre",
+      placeholder: "Ingrese el nombre del producto",
+      name: "nombre",
+      type: "text",
+    },
+    {
+      label: "Precio Costo",
+      placeholder: "Ingrese el precio costo del producto",
+      name: "precioCosto",
+      type: "number",
+    },
+    {
+      label: "Precio Venta",
+      placeholder: "Ingrese el precio venta del producto",
+      name: "precioVenta",
+      type: "number",
+    },
+    {
+      label: "Stock",
+      placeholder: "Ingrese el stock del producto",
+      name: "stock",
+      type: "number",
+    },
+    {
+      label: "Descripcion",
+      placeholder: "Ingrese la descripcion del producto",
+      name: "descripcion",
+      type: "text",
+    },
+    {
+      label: "Fecha Compra",
+      placeholder: "Ingrese la fecha de compra del producto",
+      name: "fechaCompra",
+      type: "date",
+    },
+  ];
 
   return (
     <>
