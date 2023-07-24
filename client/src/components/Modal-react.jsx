@@ -1,6 +1,7 @@
 import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { useState, useEffect } from "react";
+import Formulario from "./Formulario";
 
 function Modal_test({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
