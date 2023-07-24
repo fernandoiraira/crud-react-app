@@ -65,6 +65,18 @@ function Buscador({
       });
   };
 
+  const destructure = (elem) => {
+    const result = Object.keys(elem);
+
+    Object.keys(elem).forEach((clave) => {
+      console.log("Clave: " + clave);
+    });
+
+    console.log(result);
+
+    return result;
+  };
+
   return (
     <div className="container">
       <div className="container">
@@ -110,15 +122,13 @@ function Buscador({
             </thead>
             <tbody>
               {filtrarItems().map((elem, key) => {
+                const atributos = destructure(elem);
+
                 return (
                   <tr key={key}>
-                    <td>{elem.id}</td>
-                    <td>{elem.nombre} </td>
-                    <td>{elem.precio_costo}</td>
-                    <td>{elem.precio_venta} </td>
-                    <td>{elem.stock} </td>
-                    <td>{elem.descripcion} </td>
-                    <td>{elem.fecha_compra} </td>
+                    {atributos.map((atributo) => (
+                      <td key={atributo}>{elem[atributo]}</td>
+                    ))}
                     <td>
                       <div
                         className="btn-group"
