@@ -16,7 +16,13 @@ function Sidebar() {
       <Sidenav expanded={expanded}>
         <Sidenav.Body>
           <Nav activeKey={activeKey} onSelect={setActiveKey}>
-            <Nav.Item eventKey="1" icon={<DashboardIcon />} as={Link} to="/">
+            <Nav.Item
+              eventKey="1"
+              style={{ textDecoration: "none" }}
+              icon={<DashboardIcon />}
+              as={Link}
+              to="/"
+            >
               GESTIÓN
             </Nav.Item>
             <Nav.Menu
