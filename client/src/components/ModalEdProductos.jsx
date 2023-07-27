@@ -2,7 +2,7 @@ import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { useState, useEffect } from "react";
 
-function Modal_test({ onOk, onClose, isOpen, editado }) {
+function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
     id: null,
     nombre: "",
@@ -149,4 +149,4 @@ function Modal_test({ onOk, onClose, isOpen, editado }) {
   );
 }
 
-export default Modal_test;
+export default ModalEdProductos;

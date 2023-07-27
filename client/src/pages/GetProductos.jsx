@@ -1,7 +1,7 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Modalreact from "../components/Modal-react";
+import Modalreact from "../components/ModalEdProductos";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
@@ -71,7 +71,7 @@ function Productos() {
         />
       </div>
       <div className="card text-center mt-5">
-        <div className="card-header">LISTA DE PRODUCTOS</div>
+        <div className="card-header">BUSCAR PRODUCTOS</div>
         <div className="card-body">
           <div className="input-group mb-3">
             <div className="input-group-prepend">
@@ -87,7 +87,6 @@ function Productos() {
               aria-describedby="basic-addon1"
               onChange={handleChange}
               name="nombre"
-              //value={formData.nombre}
             />
           </div>
           <table className="table table-striped">
