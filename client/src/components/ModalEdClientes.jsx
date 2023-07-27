@@ -10,7 +10,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
     fecha_nacimiento: null,
     email: "",
     telefono: "",
-    fechaRegistro: null,
+    fecha_registro: null,
   });
 
   const handleChange = (event) => {
@@ -23,10 +23,10 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
       id: editado.id,
       nombre: editado.nombre,
       apellido: editado.apellido,
-      fechaNac: editado.fecha_nacimiento,
+      fecha_nacimiento: editado.fecha_nacimiento,
       email: editado.email,
       telefono: editado.telefono,
-      fechaRegistro: editado.fecha_registro,
+      fecha_registro: editado.fecha_registro,
     });
   }, [editado]);
 
