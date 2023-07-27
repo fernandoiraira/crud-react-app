@@ -85,7 +85,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   placeholder="Ingrese la fecha de nacimiento"
                   aria-label="FechaNac"
                   aria-describedby="basic-addon1"
-                  name="fechaNac"
+                  name="fecha_nacimiento"
                   onChange={handleChange}
                   defaultValue={editado.fecha_nacimiento}
                 />
