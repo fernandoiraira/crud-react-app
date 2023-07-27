@@ -6,8 +6,8 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
     id: null,
     nombre: "",
-    precio_costo: null,
-    precio_venta: null,
+    precioCosto: null,
+    precioVenta: null,
     stock: null,
     descripcion: "",
     fecha_compra: null,
@@ -15,7 +15,6 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(formData);
   };
 
   useEffect(() => {
