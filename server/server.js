@@ -138,6 +138,15 @@ app.delete("/delete/producto/:id", (req, res) => {
   });
 });
 
+app.delete("/delete/cliente/:id", (req, res) => {
+  const id = req.params.id;
+
+  db.query("DELETE FROM clientes WHERE id =?", id, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
+
 // Iniciar el servidor y escuchar en el puerto definido
 app.listen(port, (req, res) => {
   console.log("Servidor corriendo en el puerto " + port); // Mostrar un mensaje en la consola cuando el servidor se inicia con éxito
