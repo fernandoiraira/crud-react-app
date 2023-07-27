@@ -50,7 +50,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="nombre"
                   onChange={handleChange}
-                  defaultValue={formData.nombre}
+                  defaultValue={editado.nombre}
                 />
               </div>
 
@@ -68,7 +68,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="precioCosto"
                   onChange={handleChange}
-                  defaultValue={formData.precioCosto}
+                  defaultValue={editado.precio_costo}
                 />
               </div>
 
@@ -86,7 +86,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="precioVenta"
                   onChange={handleChange}
-                  defaultValue={formData.precioVenta}
+                  defaultValue={editado.precio_venta}
                 />
               </div>
 
@@ -104,7 +104,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="stock"
                   onChange={handleChange}
-                  defaultValue={formData.stock}
+                  defaultValue={editado.stock}
                 />
               </div>
 
@@ -122,7 +122,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="descripcion"
                   onChange={handleChange}
-                  defaultValue={formData.descripcion}
+                  defaultValue={editado.descripcion}
                 />
               </div>
             </div>
@@ -133,7 +133,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
           <Button
             appearance="primary"
             onClick={() => {
-              console.log("MODAL: " + formData);
+              console.log(formData);
               onOk(formData);
             }}
           >

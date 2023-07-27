@@ -10,8 +10,8 @@ function Productos() {
   const [productoEditado, setEditado] = useState({});
 
   const handleEditar = (elem) => {
-    setEditar(true);
     setEditado(elem);
+    setEditar(true);
   };
 
   const handleClose = () => {
