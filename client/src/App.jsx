@@ -1,4 +1,6 @@
+//Import de estilo
 import "./App.css";
+
 //Imports de react-router-dom
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
