@@ -140,7 +140,6 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
           <Button
             appearance="primary"
             onClick={() => {
-              console.log("MODAL: " + formData);
               onOk(formData);
             }}
           >
