@@ -50,7 +50,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="nombre"
                   onChange={handleChange}
-                  defaultValue={editado.nombre}
+                  defaultValue={formData.nombre}
                 />
               </div>
 
@@ -68,7 +68,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="precioCosto"
                   onChange={handleChange}
-                  defaultValue={editado.precio_costo}
+                  defaultValue={formData.precioCosto}
                 />
               </div>
 
@@ -86,7 +86,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="precioVenta"
                   onChange={handleChange}
-                  defaultValue={editado.precio_venta}
+                  defaultValue={formData.precioVenta}
                 />
               </div>
 
@@ -104,7 +104,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="stock"
                   onChange={handleChange}
-                  defaultValue={editado.stock}
+                  defaultValue={formData.stock}
                 />
               </div>
 
@@ -122,7 +122,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="descripcion"
                   onChange={handleChange}
-                  defaultValue={editado.descripcion}
+                  defaultValue={formData.descripcion}
                 />
               </div>
             </div>
