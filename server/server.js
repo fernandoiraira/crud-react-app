@@ -40,7 +40,7 @@ app.put("/update/cliente", (req, res) => {
   const fecha_nacimiento = req.body.fecha_nacimiento;
   const email = req.body.email;
   const telefono = req.body.telefono;
-  const fecha_registro = req.body.fecha_registro;
+  const fecha_registro = req.body.fecha_reg;
 
   console.log(
     id,
