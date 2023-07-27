@@ -62,7 +62,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   </span>
                 </div>
                 <input
-                  type="number"
+                  type="text"
                   className="form-control"
                   placeholder="Ingrese el apellido del cliente"
                   aria-label="Apellido"
@@ -80,12 +80,12 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   </span>
                 </div>
                 <input
-                  type="number"
+                  type="date"
                   className="form-control"
                   placeholder="Ingrese la fecha de nacimiento"
                   aria-label="FechaNac"
                   aria-describedby="basic-addon1"
-                  name="fechaNac"
+                  name="fecha_nacimiento"
                   onChange={handleChange}
                   defaultValue={editado.fecha_nacimiento}
                 />
@@ -98,7 +98,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   </span>
                 </div>
                 <input
-                  type="number"
+                  type="email"
                   className="form-control"
                   placeholder="Ingrese el email del cliente"
                   aria-label="Email"
@@ -116,7 +116,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   </span>
                 </div>
                 <input
-                  type="text"
+                  type="phone"
                   className="form-control"
                   placeholder="Ingrese el teléfono del cliente"
                   aria-label="Teléfono"
