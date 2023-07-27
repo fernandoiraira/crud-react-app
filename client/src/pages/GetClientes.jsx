@@ -1,7 +1,7 @@
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Modalreact from "../components/ModalEdProductos";
+import Modalreact from "../components/ModalEdClientes";
 
 function GetClientes() {
   const [clientesLista, setProductos] = useState([]);
