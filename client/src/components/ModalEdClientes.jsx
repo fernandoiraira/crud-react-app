@@ -15,6 +15,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
+    console.log(editado);
     console.log(formData);
   };
 
