@@ -2,15 +2,15 @@ import { Modal, Button } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 import { useState, useEffect } from "react";
 
-function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
+function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
   const [formData, setFormData] = useState({
     id: null,
     nombre: "",
-    precio_costo: null,
-    precio_venta: null,
-    stock: null,
-    descripcion: "",
-    fecha_compra: null,
+    apellido: "",
+    fecha_nacimiento: null,
+    email: "",
+    telefono: "",
+    fechaRegistro: null,
   });
 
   const handleChange = (event) => {
@@ -22,11 +22,11 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
     setFormData({
       id: editado.id,
       nombre: editado.nombre,
-      precioCosto: editado.precio_costo,
-      precioVenta: editado.precio_venta,
-      stock: editado.stock,
-      descripcion: editado.descripcion,
-      fecha_compra: editado.fecha_compra,
+      apellido: editado.apellido,
+      fechaNac: editado.fecha_nacimiento,
+      email: editado.email,
+      telefono: editado.telefono,
+      fechaRegistro: editado.fecha_registro,
     });
   }, [editado]);
 
@@ -35,7 +35,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
       <Modal overflow={true} open={isOpen} backdrop={true}>
         <Modal.Body>
           <div className="card text-center">
-            <div className="card-header">Editar Producto</div>
+            <div className="card-header">Editar Cliente</div>
             <div className="card-body">
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
@@ -46,7 +46,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Ingrese el nombre del producto"
+                  placeholder="Ingrese el nombre del cliente"
                   aria-label="Nombre"
                   aria-describedby="basic-addon1"
                   name="nombre"
@@ -58,72 +58,72 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    Precio costo:
+                    Apellido:
                   </span>
                 </div>
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Ingrese el precio costo"
-                  aria-label="PrecioCosto"
+                  placeholder="Ingrese el apellido del cliente"
+                  aria-label="Apellido"
                   aria-describedby="basic-addon1"
-                  name="precioCosto"
+                  name="apellido"
                   onChange={handleChange}
-                  defaultValue={editado.precio_costo}
+                  defaultValue={editado.apellido}
                 />
               </div>
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    Precio venta:
+                    Fecha Nacimiento:
                   </span>
                 </div>
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Ingrese el precio de venta"
-                  aria-label="PrecioVenta"
+                  placeholder="Ingrese la fecha de nacimiento"
+                  aria-label="FechaNac"
                   aria-describedby="basic-addon1"
-                  name="precioVenta"
+                  name="fechaNac"
                   onChange={handleChange}
-                  defaultValue={editado.precio_venta}
+                  defaultValue={editado.fecha_nacimiento}
                 />
               </div>
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    Stock:
+                    Email:
                   </span>
                 </div>
                 <input
                   type="number"
                   className="form-control"
-                  placeholder="Ingrese el stock del producto"
-                  aria-label="Stock"
+                  placeholder="Ingrese el email del cliente"
+                  aria-label="Email"
                   aria-describedby="basic-addon1"
-                  name="stock"
+                  name="email"
                   onChange={handleChange}
-                  defaultValue={editado.stock}
+                  defaultValue={editado.email}
                 />
               </div>
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
                   <span className="input-group-text" id="basic-addon1">
-                    Descripción:
+                    Telefono:
                   </span>
                 </div>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Ingrese una descripcion del producto"
-                  aria-label="Descripcion"
+                  placeholder="Ingrese el teléfono del cliente"
+                  aria-label="Teléfono"
                   aria-describedby="basic-addon1"
-                  name="descripcion"
+                  name="telefono"
                   onChange={handleChange}
-                  defaultValue={editado.descripcion}
+                  defaultValue={editado.telefono}
                 />
               </div>
             </div>
@@ -149,4 +149,4 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
   );
 }
 
-export default ModalEdProductos;
+export default ModalEdClientes;
