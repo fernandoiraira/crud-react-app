@@ -97,7 +97,7 @@ function Productos() {
                 <th scope="col">Precio Costo</th>
                 <th scope="col">Precio Venta</th>
                 <th scope="col">Stock</th>
-                <th scope="col">Descr.</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Fecha Compra</th>
                 <th scope="col">Acciones</th>
               </tr>
