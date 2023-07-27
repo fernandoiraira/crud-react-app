@@ -7,10 +7,10 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
     id: null,
     nombre: "",
     apellido: "",
-    fecha_nac: null,
+    fechaNac: null,
     email: "",
     telefono: "",
-    fecha_reg: null,
+    fechaRegistro: null,
   });
 
   const handleChange = (event) => {
@@ -26,7 +26,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
       fechaNac: editado.fecha_nacimiento,
       email: editado.email,
       telefono: editado.telefono,
-      fechRegistro: editado.fecha_registro,
+      fechaRegistro: editado.fecha_registro,
     });
   }, [editado]);
 
@@ -51,7 +51,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="nombre"
                   onChange={handleChange}
-                  defaultValue={editado.nombre}
+                  defaultValue={formData.nombre}
                 />
               </div>
 
@@ -69,7 +69,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="apellido"
                   onChange={handleChange}
-                  defaultValue={editado.apellido}
+                  defaultValue={formData.apellido}
                 />
               </div>
 
@@ -87,7 +87,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="fecha_nacimiento"
                   onChange={handleChange}
-                  defaultValue={editado.fecha_nacimiento}
+                  defaultValue={formData.fechaNac}
                 />
               </div>
 
@@ -105,7 +105,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="email"
                   onChange={handleChange}
-                  defaultValue={editado.email}
+                  defaultValue={formData.email}
                 />
               </div>
 
@@ -123,7 +123,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   aria-describedby="basic-addon1"
                   name="telefono"
                   onChange={handleChange}
-                  defaultValue={editado.telefono}
+                  defaultValue={formData.telefono}
                 />
               </div>
             </div>
