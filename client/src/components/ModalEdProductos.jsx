@@ -10,7 +10,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
     precioVenta: null,
     stock: null,
     descripcion: "",
-    fecha_compra: null,
+    fechaCompra: null,
   });
 
   const handleChange = (event) => {
@@ -25,7 +25,7 @@ function ModalEdProductos({ onOk, onClose, isOpen, editado }) {
       precioVenta: editado.precio_venta,
       stock: editado.stock,
       descripcion: editado.descripcion,
-      fecha_compra: editado.fecha_compra,
+      fechaCompra: editado.fecha_compra,
     });
   }, [editado]);
 
