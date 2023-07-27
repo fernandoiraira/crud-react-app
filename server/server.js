@@ -32,6 +32,37 @@ app.post("/create/cliente", (req, res) => {
   );
 });
 
+app.put("/update/cliente", (req, res) => {
+  // Extraer los datos del cuerpo de la solicitud
+  const id = req.body.id;
+  const nombre = req.body.nombre;
+  const apellido = req.body.apellido;
+  const fecha_nacimiento = req.body.fecha_nacimiento;
+  const email = req.body.email;
+  const telefono = req.body.telefono;
+  const fecha_registro = req.body.fecha_registro;
+
+  console.log(
+    id,
+    nombre,
+    apellido,
+    fecha_nacimiento,
+    email,
+    telefono,
+    fecha_registro
+  );
+
+  // Ejecutar una consulta SQL para actualizar el cliente en la tabla de clientes
+  db.query(
+    "UPDATE clientes SET nombre=?,apellido=?,fecha_nacimiento=?,email=?,telefono=?,fecha_registro=? WHERE id=?",
+    [nombre, apellido, fecha_nacimiento, email, telefono, fecha_registro, id],
+    (err, result) => {
+      if (err) throw err; // Si hay un error, enviar una respuesta con el error
+      res.send(result); // Enviar una respuesta con el resultado de la consulta (puede ser el número de filas afectadas)
+    }
+  );
+});
+
 // Ruta para obtener todos los clientes mediante una solicitud GET
 app.get("/get/clientes", (req, res) => {
   // Ejecutar una consulta SQL para seleccionar todos los registros de la tabla de clientes
