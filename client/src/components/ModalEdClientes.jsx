@@ -7,10 +7,10 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
     id: null,
     nombre: "",
     apellido: "",
-    fecha_nacimiento: null,
+    fechaNac: null,
     email: "",
     telefono: "",
-    fecha_registro: null,
+    fechRegistro: null,
   });
 
   const handleChange = (event) => {
@@ -23,10 +23,10 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
       id: editado.id,
       nombre: editado.nombre,
       apellido: editado.apellido,
-      fecha_nacimiento: editado.fecha_nacimiento,
+      fechaNac: editado.fecha_nacimiento,
       email: editado.email,
       telefono: editado.telefono,
-      fecha_registro: editado.fecha_registro,
+      fechaRegistro: editado.fecha_registro,
     });
   }, [editado]);
 
@@ -85,7 +85,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   placeholder="Ingrese la fecha de nacimiento"
                   aria-label="FechaNac"
                   aria-describedby="basic-addon1"
-                  name="fecha_nacimiento"
+                  name="fechaNac"
                   onChange={handleChange}
                   defaultValue={editado.fecha_nacimiento}
                 />
