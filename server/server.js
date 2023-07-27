@@ -109,7 +109,7 @@ app.put("/update/producto", (req, res) => {
   const precioVenta = req.body.precioVenta;
   const stock = req.body.stock;
   const descripcion = req.body.descripcion;
-  const fecha = req.body.fecha_compra;
+  const fecha = req.body.fechaCompra;
 
   console.log("TODO: " + req.body);
 
