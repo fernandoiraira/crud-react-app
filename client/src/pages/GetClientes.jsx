@@ -4,7 +4,7 @@ import axios from "axios";
 import Modalreact from "../components/ModalEdClientes";
 
 function GetClientes() {
-  const [clientesLista, setProductos] = useState([]);
+  const [clientesLista, setClientes] = useState([]);
   const [clienteBuscado, setBuscado] = useState("");
   const [editar, setEditar] = useState(false);
   const [clienteEditado, setEditado] = useState({});
@@ -23,9 +23,9 @@ function GetClientes() {
     console.log(clienteBuscado);
   };
 
-  const getProductos = () => {
+  const getClientes = () => {
     axios.get("http://localhost:3001/get/clientes").then((response) => {
-      setProductos(response.data);
+      setClientes(response.data);
     });
   };
 
@@ -34,13 +34,13 @@ function GetClientes() {
     axios
       .put("http://localhost:3001/update/cliente/", res) // Envía el objeto completo en la solicitud PUT
       .then(() => {
-        getProductos();
+        getClientes();
         alert("updated!!!");
       });
   };
 
   useEffect(() => {
-    getProductos();
+    getClientes();
   }, []);
 
   // Función para filtrar los clientes por el nombre buscado
@@ -52,7 +52,7 @@ function GetClientes() {
 
   const deleteCliente = (id) => {
     axios.delete("http://localhost:3001/delete/cliente/" + id).then(() => {
-      getProductos();
+      getClientes();
     });
   };
 
@@ -61,6 +61,7 @@ function GetClientes() {
       <div className="container">
         <Modalreact
           onOk={(res) => {
+            console.log(res);
             setEditado(res);
             update(res);
             handleClose();
