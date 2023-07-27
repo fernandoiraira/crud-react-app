@@ -10,8 +10,8 @@ function GetClientes() {
   const [clienteEditado, setEditado] = useState({});
 
   const handleEditar = (elem) => {
-    setEditar(true);
     setEditado(elem);
+    setEditar(true);
   };
 
   const handleClose = () => {
