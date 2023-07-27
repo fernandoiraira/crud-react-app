@@ -7,15 +7,20 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
     id: null,
     nombre: "",
     apellido: "",
-    fecha_nac: null,
+    fecha_nacimiento: null,
     email: "",
     telefono: "",
     fecha_reg: null,
   });
 
   const handleChange = (event) => {
+    console.log(
+      "Target name: " +
+        event.target.name +
+        " | Target value: " +
+        event.target.value
+    );
     setFormData({ ...formData, [event.target.name]: event.target.value });
-    console.log(editado);
     console.log(formData);
   };
 
@@ -24,7 +29,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
       id: editado.id,
       nombre: editado.nombre,
       apellido: editado.apellido,
-      fecha_nac: editado.fecha_nacimiento,
+      fecha_nacimiento: editado.fecha_nacimiento,
       email: editado.email,
       telefono: editado.telefono,
       fecha_reg: editado.fecha_registro,
@@ -86,7 +91,7 @@ function ModalEdClientes({ onOk, onClose, isOpen, editado }) {
                   placeholder="Ingrese la fecha de nacimiento"
                   aria-label="FechaNac"
                   aria-describedby="basic-addon1"
-                  name="fecha_nac"
+                  name="fecha_nacimiento"
                   onChange={handleChange}
                   defaultValue={editado.fecha_nacimiento}
                 />
