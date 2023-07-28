@@ -2,6 +2,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Modalreact from "../components/ModalEdProductos";
+import { InputNumber } from "rsuite";
 
 function Productos() {
   const [productosLista, setProductos] = useState([]);
@@ -121,15 +122,9 @@ function Productos() {
                         role="group"
                         aria-label="Basic example"
                       >
-                        <button
-                          type="button"
-                          className="btn btn-info"
-                          onClick={() => {
-                            handleEditar(elem);
-                          }}
-                        >
-                          Editar
-                        </button>
+                        <div style={{ width: 70 }}>
+                          <InputNumber min={0} key={key} />
+                        </div>
                       </div>
                     </td>
                   </tr>
