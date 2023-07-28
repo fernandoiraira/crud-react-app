@@ -122,9 +122,7 @@ function Productos() {
                         role="group"
                         aria-label="Basic example"
                       >
-                        <div style={{ width: 70 }}>
-                          <InputNumber min={0} key={key} />
-                        </div>
+                        <InputNumber min={0} key={key} style={{ width: 70 }} />
                       </div>
                     </td>
                   </tr>
