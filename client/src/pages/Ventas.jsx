@@ -21,7 +21,6 @@ function Productos() {
 
   const handleChange = (event) => {
     setBuscado(event.target.value);
-    console.log(productoBuscado);
   };
 
   const getProductos = () => {
@@ -108,7 +107,7 @@ function Productos() {
             <tbody>
               {filtrarProductos().map((elem, key) => {
                 return (
-                  <tr key={key}>
+                  <tr key={elem.id}>
                     <td>{elem.id}</td>
                     <td>{elem.nombre} </td>
                     <td>{elem.precio_costo}</td>
@@ -122,7 +121,11 @@ function Productos() {
                         role="group"
                         aria-label="Basic example"
                       >
-                        <InputNumber min={0} key={key} style={{ width: 70 }} />
+                        <InputNumber
+                          min={0}
+                          key={elem.id}
+                          style={{ width: 70 }}
+                        />
                       </div>
                     </td>
                   </tr>

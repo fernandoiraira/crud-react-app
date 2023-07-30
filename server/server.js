@@ -27,6 +27,7 @@ app.post("/create/cliente", (req, res) => {
     [nombre, apellido, fecha_nacimiento, email, telefono, fecha_registro],
     (err, result) => {
       if (err) throw err; // Si hay un error, enviar una respuesta con el error
+      console.log(result);
       res.send(result); // Enviar una respuesta con el resultado de la consulta (puede ser el ID del nuevo cliente)
     }
   );
